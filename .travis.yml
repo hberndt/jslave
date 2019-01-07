@@ -1,0 +1,15 @@
+os:
+  - linux
+services:
+  - docker
+env:
+  matrix:
+    - JCON=docker
+    - JCON=jdk8
+    - JCON=jdk11
+  install:
+    - docker version
+    - docker build -f Dockerfile-"$JCON"/ -f hberndt/jslave-"$JCON":travis jslave-"$JCON"/
+  script:
+    - docker images
+    - docker inspect hberndt/jslave-"$JCON":travis
