@@ -9,7 +9,7 @@ env:
     - JCON=jdk11
 install:
     - docker version
-    - docker build -f Dockerfile-"$JCON" -t hberndt/jslave-"$JCON":travis jslave-"$JCON"/
+    - docker build -f Dockerfile-"$JCON" -t hberndt/jslave-"$JCON":travis .
 script:
     - docker images
     - docker inspect hberndt/jslave-"$JCON":travis
