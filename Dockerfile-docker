@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM openjdk:8-jdk
 MAINTAINER Holger Berndt <berndthb@gmail.com>
 
 ARG VERSION=3.28
